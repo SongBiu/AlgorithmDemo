@@ -1,8 +1,8 @@
 run: main.o sort.o
-	g++ -o run main.o sort.o
+	clang++ main.o sort.o -o run
 sort.o: sort.cpp sort.h
-	g++ -c sort.cpp -o sort.o
+	clang++ -c sort.cpp -o sort.o
 main.o: main.cpp
-	g++ -c main.cpp -o main.o -std=c++11
+	clang++ -c main.cpp -o main.o -std=c++11
 clean:
-	rm *.o run
+	rm *.o run data build
