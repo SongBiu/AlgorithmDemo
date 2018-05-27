@@ -5,4 +5,4 @@ sort.o: sort.cpp sort.h
 main.o: main.cpp
 	clang++ -c main.cpp -o main.o -std=c++11
 clean:
-	rm *.o run data build
+	rm *.o run data
