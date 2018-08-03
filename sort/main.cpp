@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 	cout << "write complete" << endl;
 	fs.open("data", ios::in);
 	string p;
-	for (int j = 0; j < 50; j++)
+	for (int j = 0; j < test_number; j++)
 	{
 		int i = 0;
 		for (int k = 0; k < n; k++)
@@ -44,24 +44,29 @@ int main(int argc, char** argv)
 		}
 		
 		clock_t start_time = clock();
+		cout << "begin to quick sort" << endl;
 		quickSort(vec1, 0, n - 1);
 		quickSort_time += (clock()-start_time);
 		
 		start_time = clock();
+		cout << "begin to quick sort boost" << endl;
 		quickSortG(vec2, 0, n - 1);
 		quickSort_G_time += (clock()-start_time);
 		
+		cout << "begin to merge sort" << endl;
 		start_time = clock();
 		mergeSort(vec3, 0, n - 1);
 		mergeSort_time += (clock()-start_time);
 		if (argc != 4) {
 			start_time = clock();
+			cout << "begin to bubble sort" << endl;
 			bubbleSort(vec4, 0, n - 1);
 			bubbleSort_time += (clock()-start_time);
 		}
 		
 		
 		start_time = clock();
+		cout << "begin to insert sort" << endl;
 		insertSort(vec5, 0, n - 1);
 		insertSort_time += (clock()-start_time);
 	}

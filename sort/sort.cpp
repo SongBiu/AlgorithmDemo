@@ -40,7 +40,7 @@ int partition(int *array, int left, int right)
 		{
 			array[r] = array[l];
 		}
-		while (l < r && array[r] > tmp)
+		while (l <= r && array[r] > tmp)
 		{
 			r--;
 		}
