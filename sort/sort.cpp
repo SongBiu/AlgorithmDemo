@@ -26,7 +26,7 @@ void insertSort(int *array, int left, int right)
 }
 int partition(int *array, int left, int right)
 {
-	int index = (left + right) / 2;
+	int index = rand() % (right - left + 1) + left;
 	int tmp = array[index];
 	int l = left, r = right;
 	array[index] = array[r];
@@ -39,6 +39,7 @@ int partition(int *array, int left, int right)
 		if (l < r)
 		{
 			array[r] = array[l];
+			r--;
 		}
 		while (l <= r && array[r] > tmp)
 		{
@@ -47,6 +48,7 @@ int partition(int *array, int left, int right)
 		if (l < r)
 		{
 			array[l] = array[r];
+			l++;
 		}
 	}
 	array[l] = tmp;
